@@ -33,7 +33,7 @@ def calculate_macd(df, span1=12, span2=26, signal=9):
 # Carregamento dos dados
 @st.cache_data
 def importar_dados():
-    caminho_arquivo_csv = r"C:\Users\Rodrigo_df\dados_cripto.csv"
+    caminho_arquivo_csv = "dados_cripto.csv"
     df = pd.read_csv(caminho_arquivo_csv)
     df['tempo'] = pd.to_datetime(df['tempo'])
     df['retorno_diario'] = df.groupby('moeda')['fechamento'].pct_change()  # Calcula retorno diário aqui
@@ -55,7 +55,7 @@ if escolha == 'Home':
 
 
 if escolha == 'Visualização':
-    url_da_imagem = r'C:\Users\Rodrigo_df\Downloads\post_thumbnail-55a60f34beddda4324a2e11c4503b6f8.jpeg'
+    url_da_imagem = 'post_thumbnail-55a60f34beddda4324a2e11c4503b6f8.jpeg'
     st.image(url_da_imagem, use_column_width=True)
 
 if escolha == 'Visualização':
